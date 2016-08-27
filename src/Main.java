@@ -40,7 +40,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-        double lat=0, lng=0;
+        double lat=51, lng=21;
 
         
 		/*
@@ -72,8 +72,8 @@ public class Main {
         
         for(int i = 0; i < 100; i++)  
         {  
-           lat = 2*Math.random() - 1;
-           lng = 2*Math.random() - 1;
+           lat = 51 + (2*Math.random() - 1)*2;
+           lng = 21 + (2*Math.random() - 1)*2;
            service = Service.Builder.newInstance(Integer.toString(i))
         		//   .addTimeWindow(TimeWindow.newInstance(0, 18.0))
         		   .addSizeDimension(WEIGHT_INDEX,1)
@@ -135,9 +135,9 @@ public class Main {
 		
 		new VrpXMLWriter(problem, solutions).write("output/problem-with-solution.xml");
 		
-		SolutionPrinter.print(problem, bestSolution, Print.CONCISE);
+		//SolutionPrinter.print(problem, bestSolution, Print.CONCISE);
 		
-		//SolutionPrinter.print(problem, bestSolution, Print.VERBOSE);
+		SolutionPrinter.print(problem, bestSolution, Print.VERBOSE);
 		
 		new GraphStreamViewer(problem, bestSolution).setRenderDelay(100).display();
 	}

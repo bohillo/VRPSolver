@@ -18,7 +18,7 @@ public class CustomForwardVehicleRoutingTransportCosts extends AbstractForwardVe
 	@Override
 	public double getTransportTime(Location arg0, Location arg1, double arg2, Driver arg3, Vehicle arg4) {
 		// TODO Auto-generated method stub
-		return getTransportCost(arg0, arg1, arg2, arg3, arg4) / 90.0 / 1000.0;
+		return getTransportCost(arg0, arg1, arg2, arg3, arg4) / 90.0 ;
 	}
 	
 	private double distance(double lat1, double lat2, double lon1, double lon2, double el1, double el2) {
